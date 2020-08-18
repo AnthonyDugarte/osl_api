@@ -3,7 +3,7 @@ import json
 import hashlib
 import base64
 
-from osl_simple_api.helpers import remove_leading_slash
+from osl_api.helpers import remove_leading_slash
 
 
 def rest_sign_token(data: dict, path: str, secret: str) -> bytes:
