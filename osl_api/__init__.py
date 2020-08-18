@@ -2,15 +2,19 @@ import base64
 import os
 import requests
 
-from osl_simple_api.auth import authorized_headers
-from osl_simple_api.helpers import remove_leading_slash, gen_osl_tonce
+from osl_api.auth import authorized_headers
+from osl_api.helpers import remove_leading_slash, gen_osl_tonce
+
+
+DEFAULT_OSL_KEY = os.getenv('OSL_KEY')
+DEFAULT_OSL_SECRET = os.getenv('OSL_SECRET')
 
 
 class OslClient:
     def __init__(
         self,
-        key: str = os.getenv('OSL_KEY'),
-        secret: str = os.getenv('OSL_SECRET'),
+        key: str = DEFAULT_OSL_KEY,
+        secret: str = DEFAULT_OSL_SECRET,
         base_url: str = 'https://trade.osl.com/',
     ):
         self.key = key
