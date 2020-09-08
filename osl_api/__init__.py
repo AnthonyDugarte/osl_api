@@ -43,4 +43,4 @@ class OslClient:
             headers=headers,
         )
 
-        return r.json()
+        return r
